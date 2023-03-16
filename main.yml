@@ -5,14 +5,14 @@
   tags:
     - dependencies
 
-# Configure user access - default username is user
-- hosts: "group1"
-  vars:
-    ssh_key_paths:
-      - files/group1/paul.key.pub
-      - files/group1/paul.key.pub
-  roles:
-    - users
+# Optional: configure additional user access - default username is user
+# - hosts: "group1"
+#   vars:
+#     ssh_key_paths:
+#       - files/group1/paul.key.pub
+#       - files/group1/paul.key.pub
+#   roles:
+#     - users
 
 # Install the sample app
 - hosts: all
