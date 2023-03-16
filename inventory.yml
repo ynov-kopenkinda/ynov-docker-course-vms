@@ -6,4 +6,6 @@ all:
       hosts:
         # Configured on https://www.duckdns.org
         ynov-m1b-group1.duckdns.org:
+      vars:
+        domain_name: ynov-m1b-group1.duckdns.org
           
