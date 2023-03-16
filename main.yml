@@ -1,0 +1,13 @@
+- hosts: "group1"
+  vars:
+    ssh_key_paths:
+      - files/group1/paul.key.pub
+      - files/group1/paul.key.pub
+  roles:
+    - users
+
+- hosts: all
+  roles:
+    - docker-compose
+  tags:
+    - dependencies

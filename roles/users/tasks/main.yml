@@ -1,0 +1,24 @@
+- name: Ensure group "docker" exists with correct gid
+  ansible.builtin.group:
+    name: docker
+    state: present
+    gid: 1750
+
+- name: "Create user accounts"
+  user:
+    name: "{{ username }}"
+    groups: "{{ usergroups }}"
+    shell: /bin/bash
+
+- name: "Add authorized keys"
+  authorized_key:
+    user: "{{ username }}"
+    key: "{{ lookup('file', item ) }}"
+  with_items: "{{ ssh_key_paths }}"
+
+- name: "Allow admin users to sudo without a password"
+  lineinfile:
+    dest: "/etc/sudoers" # path: in version 2.3
+    state: "present"
+    regexp: "^%admin"
+    line: "%admin ALL=(ALL) NOPASSWD: ALL"

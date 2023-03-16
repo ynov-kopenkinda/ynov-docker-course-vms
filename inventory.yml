@@ -1,0 +1,9 @@
+all:
+  vars:
+    ansible_user: root
+  children:
+    group1:
+      hosts:
+        # Configured on https://www.duckdns.org
+        ynov-m1b-group1.duckdns.org:
+          
