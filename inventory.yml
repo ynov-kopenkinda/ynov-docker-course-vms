@@ -1,11 +1,11 @@
 all:
   vars:
-    ansible_user: root
+    ansible_user: ubuntu
   children:
     group1:
       hosts:
         # Configured on https://www.duckdns.org
-        ynov-m1b-group1.duckdns.org:
+        yogurt.trouve-ton-indien.store:
       vars:
-        domain_name: ynov-m1b-group1.duckdns.org
-          
+        domain_name: yogurt.trouve-ton-indien.store
+
